@@ -1,5 +1,5 @@
 class MainController < ApplicationController
   def index
-    render json: {count: Tick.count}
+    render json: {count: 0}
   end
 end
