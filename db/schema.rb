@@ -15,12 +15,13 @@ ActiveRecord::Schema.define(version: 20180318035515) do
   create_table "ticks", force: :cascade do |t|
     t.string "tushare_code", null: false
     t.string "share_name", null: false
+    t.string "ktype", null: false
     t.datetime "date", null: false
     t.float "open", null: false
     t.float "close", null: false
     t.float "high", null: false
     t.float "low", null: false
-    t.float "volumn", null: false
+    t.float "volume", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
