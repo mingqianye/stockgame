@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tushare_code: MyString
+  share_name: MyString
+  date: 2018-03-17 23:55:15
+  open: 
+  close: 
+  high: 
+  low: 
+  volumn: 
+
+two:
+  tushare_code: MyString
+  share_name: MyString
+  date: 2018-03-17 23:55:15
+  open: 
+  close: 
+  high: 
+  low: 
+  volumn: 
