@@ -14,7 +14,8 @@ WORKDIR /usr/src/app
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
-VOLUME ./db/
+VOLUME /db
+VOLUME /data
 
 COPY . .
 
