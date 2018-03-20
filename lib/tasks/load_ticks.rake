@@ -2,8 +2,9 @@ namespace :load_ticks do
   desc 'Loads final.csv to ticks table'
   task :load => :environment do
     require 'csv'
+    ticks = []
     CSV.foreach("/data/ticks.csv") do |row|
-      Tick.create( 
+      ticks << Tick.new( 
         tushare_code: row.fetch(0),
         share_name:   row.fetch(1),
         date:         Date.parse(row.fetch(2)),
@@ -14,6 +15,11 @@ namespace :load_ticks do
         low:          row.fetch(6),
         volume:       row.fetch(7)
       )
+      if ticks.count == 50
+        Tick.import(ticks)
+        ticks = []
+      end
     end
+    Tick.import(ticks)
   end
 end
