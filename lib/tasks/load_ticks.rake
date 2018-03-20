@@ -3,12 +3,11 @@ namespace :load_ticks do
   task :load => :environment do
     require 'csv'
     CSV.foreach("/data/ticks.csv") do |row|
-      Tick.find_or_initialize_by( 
+      Tick.create( 
         tushare_code: row.fetch(0),
         share_name:   row.fetch(1),
         date:         Date.parse(row.fetch(2)),
-        ktype:        'D'
-      ).update_attributes(
+        ktype:        'D',
         open:         row.fetch(3),
         close:        row.fetch(4),
         high:         row.fetch(5),

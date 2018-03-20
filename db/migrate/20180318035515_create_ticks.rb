@@ -12,5 +12,7 @@ class CreateTicks < ActiveRecord::Migration[5.1]
       t.float    :volume,       null: false
       t.timestamps
     end
+
+    add_index :ticks, [:tushare_code, :share_name, :ktype, :date]
   end
 end
