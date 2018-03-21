@@ -4,10 +4,11 @@ class RetrieveTicksService
                                     num_points:   num_points,
                                     ktype:        ktype,
                                     start_date:   start_date)
+    return {} if ticks.count == 0
 
     {
-      tushare_code: ticks.first.try(:tushare_code),
-      share_name:   ticks.first.try(:share_name),
+      tushare_code: ticks.tushare_code,
+      share_name:   ticks.share_name,
       points:       ticks.map{|x| tick_to_json(x)},
     }
   end
