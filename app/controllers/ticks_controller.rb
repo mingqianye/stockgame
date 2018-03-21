@@ -10,7 +10,7 @@ class TicksController < ApplicationController
   end
 
 private
-  def tick_param
-    @tick_param ||= params.permit(:tushare_code, :num_points, :ktype, :start_date)
+  def tick_params
+    @tick_params ||= params.permit(:tushare_code, :num_points, :ktype, :start_date)
   end
 end

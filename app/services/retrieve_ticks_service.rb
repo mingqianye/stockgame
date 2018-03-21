@@ -7,8 +7,8 @@ class RetrieveTicksService
     return {} if ticks.count == 0
 
     {
-      tushare_code: ticks.tushare_code,
-      share_name:   ticks.share_name,
+      tushare_code: ticks.first.tushare_code,
+      share_name:   ticks.first.share_name,
       points:       ticks.map{|x| tick_to_json(x)},
     }
   end
