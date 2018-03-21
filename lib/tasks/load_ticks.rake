@@ -15,7 +15,7 @@ namespace :load_ticks do
         low:          row.fetch(6),
         volume:       row.fetch(7)
       )
-      if ticks.count == 50
+      if ticks.count == 10000
         Tick.import(ticks)
         ticks = []
       end
