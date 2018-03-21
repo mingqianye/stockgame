@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tushare_code: MyString
+  ktype: MyString
+  num_points: 1
+  op_type: MyString
+  point_index: 1
+  operated_at: 2018-03-20 23:50:21
+
+two:
+  tushare_code: MyString
+  ktype: MyString
+  num_points: 1
+  op_type: MyString
+  point_index: 1
+  operated_at: 2018-03-20 23:50:21
