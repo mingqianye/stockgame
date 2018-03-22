@@ -11,9 +11,9 @@ class TicksController < ApplicationController
 
   def find_tushare_codes
     result = FilterTicksQuery.find_valid_tushare_codes(
-      num_points: tushare_codes_search_params.fetch(:num_points).to_i,
-      ktype:      tushare_codes_search_params.fetch(:ktype),
-      start_date: tushare_codes_search_params.fetch(:start_date)
+      min_num_points: tushare_codes_search_params.fetch(:min_num_points).to_i,
+      ktype:          tushare_codes_search_params.fetch(:ktype),
+      start_date:     tushare_codes_search_params.fetch(:start_date)
     )
 
     render json: {tushare_codes: result}
@@ -25,6 +25,6 @@ private
   end
 
   def tushare_codes_search_params
-    @tushare_codes_search_params ||= params.permit(:num_points, :ktype, :start_date)
+    @tushare_codes_search_params ||= params.permit(:min_num_points, :ktype, :start_date)
   end
 end
