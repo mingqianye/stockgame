@@ -10,11 +10,13 @@ class TicksController < ApplicationController
   end
 
   def find_tushare_codes
-    render json: FilterTicksQuery.find_valid_tushare_codes(
+    result = FilterTicksQuery.find_valid_tushare_codes(
       num_points: tushare_codes_search_params.fetch(:num_points).to_i,
       ktype:      tushare_codes_search_params.fetch(:ktype),
       start_date: tushare_codes_search_params.fetch(:start_date)
     )
+
+    render json: {tushare_codes: result}
   end
 
 private
