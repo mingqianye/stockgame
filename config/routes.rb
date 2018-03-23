@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'leaderboard/show'
+
   post 'player_operations/submit'
 
   get 'ticks/show'
