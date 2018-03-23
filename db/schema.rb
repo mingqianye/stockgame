@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20180322052643) do
   create_table "operations", force: :cascade do |t|
     t.integer "game_id", null: false
     t.string "op_type", null: false
-    t.string "tick_id", null: false
+    t.integer "tick_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
