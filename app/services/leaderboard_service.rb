@@ -11,7 +11,7 @@ class LeaderboardService
         rank:          i + 1,
         open_id:       game.player.open_id,
         nick_name:     game.player.nick_name,
-        profitability: game.portfolio_value
+        profitability: game.portfolio_value - 1
       }
     end
     result
