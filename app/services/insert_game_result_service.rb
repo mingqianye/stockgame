@@ -22,11 +22,12 @@ class InsertGameResultService
         ops:     params.fetch(:operations),
         ticks:   ticks
       )
-      Operation.import!(new_ops)
+
+      Operation.import!(new_ops, validate: false)
 
       # Update Game portfolio
       game.update_attributes!(
-        portfolio_value: portfolio(ops: new_ops)
+        portfolio_value: portfolio(ops: game.operations.includes(:tick))
       )
     end
   end
