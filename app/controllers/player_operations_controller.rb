@@ -1,7 +1,7 @@
 class PlayerOperationsController < ApplicationController
   def submit
     render json: { 
-      message: InsertPlayerOperationService.insert!(game_params)
+      message: InsertGameResultService.insert!(game_params)
     }
   end
 
@@ -13,7 +13,7 @@ private
       :ktype, 
       :num_points,
       :start_date,
-      operations: [:operation_type, :point_index, :operated_at]
+      operations: [:operation_type, :point_index]
     )
   end
 end
