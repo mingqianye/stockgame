@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'leaderboard/show'
+  get 'leaderboard/show_game'
 
   post 'player_operations/submit'
 
