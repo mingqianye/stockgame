@@ -5,7 +5,7 @@ class LeaderboardController < ApplicationController
 
   def show_game
     result = LeaderboardService.get_game(
-      tushare_code: game_leaderboard_params.fetch(:tushare_code),
+      tushare_code: game_leaderboard_params.fetch(:tushare_code).to_s,
       num_points:   game_leaderboard_params.fetch(:num_points),
       ktype:        game_leaderboard_params.fetch(:ktype),
       start_date:   game_leaderboard_params.fetch(:start_date)
