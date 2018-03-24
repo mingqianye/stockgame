@@ -6,7 +6,13 @@ class InsertGameResultService
       # create game
       game = Player.find_or_create_by(open_id: params.fetch(:open_id))
                    .games
-                   .create!(portfolio_value: 0)
+                   .create!(
+                     tushare_code:    params.fetch(:tushare_code),
+                     ktype:           params.fetch(:ktype),
+                     num_points:      params.fetch(:num_points),
+                     start_date:      params.fetch(:start_date),
+                     portfolio_value: -99
+                   )
 
       # find ticks
       ticks = FilterTicksQuery.filter(

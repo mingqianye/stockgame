@@ -15,6 +15,10 @@ ActiveRecord::Schema.define(version: 20180322052643) do
   create_table "games", force: :cascade do |t|
     t.integer "player_id", null: false
     t.float "portfolio_value", default: 0.0, null: false
+    t.string "ktype", null: false
+    t.integer "num_points", null: false
+    t.datetime "start_date", null: false
+    t.string "tushare_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
