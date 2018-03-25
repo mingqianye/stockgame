@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'operation_analysis/show'
+
   get 'leaderboard/show'
   get 'leaderboard/show_game'
 
