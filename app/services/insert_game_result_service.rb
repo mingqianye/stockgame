@@ -2,6 +2,8 @@ class InsertGameResultService
   # Test this method in the console
   # InsertGameResultService.insert!({open_id: "asdf", tushare_code: "600000", ktype: "D", num_points: 10, start_date: '2017-07-01', operations: [{operation_type: 'bought', point_index: 1}, {operation_type: 'sold', point_index: 3}]})
   def self.insert!(params)
+    game = nil
+
     Player.transaction do
       # create game
       game = Player.find_or_create_by(open_id: params.fetch(:open_id))
@@ -36,6 +38,8 @@ class InsertGameResultService
         portfolio_value: portfolio(ops: game.operations.includes(:tick))
       )
     end
+
+    { game_id: game.id }
   end
 
   def self.new_operations(game_id:, ops:, ticks:)

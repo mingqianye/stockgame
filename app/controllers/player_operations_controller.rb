@@ -1,7 +1,8 @@
 class PlayerOperationsController < ApplicationController
   def submit
     render json: { 
-      message: InsertGameResultService.insert!(game_params)
+      message: 'ok',
+      game_id: InsertGameResultService.insert!(game_params)
     }
   end
 
