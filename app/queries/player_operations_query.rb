@@ -8,6 +8,7 @@ class PlayerOperationsQuery
       .where('games.ktype = ?',            ktype)
       .where('DATE(games.start_date) = ?', start_date)
       .group('operations.op_type, operations.tick_id')
+      .order('ticks.date')
       .select('operations.tick_id, operations.op_type, COUNT(*) AS count')
       .as_json
       .map { |x| {x.fetch('op_type') => x.fetch('count'), 'tick_id' => x.fetch('tick_id')} }
