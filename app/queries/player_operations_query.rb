@@ -6,7 +6,7 @@ class PlayerOperationsQuery
       .where(tushare_code: tushare_code)
       .where(num_points:   num_points)
       .where(ktype:        ktype)
-      .where(start_date:   start_date)
+      .where(start_date:   start_date.to_date.to_s)
       .group('operations.op_type, operations.tick_id')
       .order('ticks.date')
       .select('operations.tick_id, operations.op_type, COUNT(*) AS count')
