@@ -1,10 +1,12 @@
 class OperationAnalysisService
-  def self.get(tushare_code:, num_points:, ktype:, start_date:, open_id:)
+  def self.get(game_id:, open_id:)
+    game = Game.find(game_id)
+
     counts = PlayerOperationsQuery.count_op_types_for(
-      tushare_code: tushare_code,
-      num_points: num_points,
-      ktype: ktype,
-      start_date: start_date
+      tushare_code: game.tushare_code,
+      num_points:   game.num_points,
+      ktype:        game.ktype,
+      start_date:   game.start_date
     )
 
     {
