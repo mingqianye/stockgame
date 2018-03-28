@@ -1,9 +1,7 @@
 class PlayerOperationsController < ApplicationController
   def submit
-    render json: { 
-      message: 'ok',
-      game_id: InsertGameResultService.insert!(game_params)
-    }
+    render json: InsertGameResultService.insert!(game_params)
+                                        .merge({message: 'ok'})
   end
 
 private
