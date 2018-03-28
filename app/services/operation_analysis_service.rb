@@ -1,13 +1,6 @@
 class OperationAnalysisService
   def self.get(game_id:, open_id:)
-    game = Game.find(game_id)
-
-    counts = PlayerOperationsQuery.count_op_types_for(
-      tushare_code: game.tushare_code,
-      num_points:   game.num_points,
-      ktype:        game.ktype,
-      start_date:   game.start_date
-    )
+    counts = PlayerOperationsQuery.count_op_types_for(game_id: game_id)
 
     {
       stats: counts.map{|x| format(x)}
