@@ -59,6 +59,7 @@ class InsertGameResultService
     result
   end
 
+  # Given an array of operations, return the final portfolio
   def self.portfolio(ops:)
     p = Portfolio.new
     ops.each do |op|

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'shadows/show'
+
   get 'operation_analysis/show'
 
   get 'leaderboard/show'
