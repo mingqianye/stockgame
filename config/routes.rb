@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'abilities/show'
+
   get 'players/upsert'
 
   get 'shadows/show'
