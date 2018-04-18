@@ -14,6 +14,12 @@ class PlayersController < ApplicationController
     render json: {upserted_player: player.as_json}
   end
 
+  def get_open_id
+    render json: {
+      open_id: OpenIdService.get(code: params.fetch(:code))
+    }
+  end
+
   private
   def upsert_params
     @uparams ||= params.permit(:open_id, :union_id, :nick_name, :avatar_url, :gender, :city, :province, :country, :language)
