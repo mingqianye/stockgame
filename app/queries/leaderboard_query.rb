@@ -17,7 +17,6 @@ class LeaderboardQuery
     Game.includes(:player)
         .includes(:ticks)
         .includes(:operations)
-        .where("portfolio_value <> ?", 1.0)
         .where(tushare_code: tushare_code,
                num_points:   num_points,
                ktype:        ktype)
