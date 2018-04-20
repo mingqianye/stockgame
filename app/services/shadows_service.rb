@@ -1,10 +1,11 @@
 class ShadowsService
-  def self.find_shadows(tushare_code:, num_points:, ktype:, start_date:)
-    games = LeaderboardQuery.games_for(
+  def self.find_shadows(tushare_code:, num_points:, ktype:, start_date:, open_id:)
+    games = ShadowQuery.shadow_games_for(
       tushare_code: tushare_code,
       num_points:   num_points,
       ktype:        ktype,
-      start_date:   start_date
+      start_date:   start_date,
+      open_id:      open_id)
     ).sample(4)
 
     {
