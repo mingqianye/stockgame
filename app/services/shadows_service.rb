@@ -5,7 +5,7 @@ class ShadowsService
       num_points:   num_points,
       ktype:        ktype,
       start_date:   start_date,
-      open_id:      open_id)
+      open_id:      open_id
     ).sample(4)
 
     {
