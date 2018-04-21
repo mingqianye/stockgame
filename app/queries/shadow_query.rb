@@ -8,5 +8,6 @@ class ShadowQuery
                ktype:        ktype)
         .where("DATE(start_date) = ?", start_date)
         .where("players.open_id <> ?", open_id)
+        .references(:player)
   end
 end
