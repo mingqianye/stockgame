@@ -7,6 +7,6 @@ class ShadowQuery
                num_points:   num_points,
                ktype:        ktype)
         .where("DATE(start_date) = ?", start_date)
-        .where("open_id <> ?", open_id)
+        .where("players.open_id <> ?", open_id)
   end
 end
