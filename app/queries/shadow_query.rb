@@ -5,6 +5,7 @@ class ShadowQuery
                           num_points:   num_points,
                           ktype:        ktype)
                    .where('DATE(start_date) = ?', start_date)
+                   .where('portfolio_value <> 1.0')
                    .where('players.open_id <> ?', open_id)
                    .group('players.id')
                    .pluck('MAX(games.id)')
