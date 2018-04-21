@@ -10,11 +10,11 @@ class AbilitiesService
 
   def self.radar(game_id)
     {
-      long_ability:   3,
-      middle_ability: 4,
-      short_ability:  6,
-      profit_ability: 7,
-      avoid_ability:  8
+      long_ability:   3 + rand(7),
+      middle_ability: 3 + rand(7),
+      short_ability:  3 + rand(7),
+      profit_ability: 3 + rand(7),
+      avoid_ability:  3 + rand(7)
     }
   end
 end
