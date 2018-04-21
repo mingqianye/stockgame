@@ -1,5 +1,5 @@
 class Game < ApplicationRecord
-  has_many   :operations
+  has_many   :operations, dependent: :destroy
   has_many   :ticks, through: :operations
   belongs_to :player
 
