@@ -10,7 +10,6 @@ class LeaderboardQuery
       ktype:        ktype,
       start_date:   start_date
     ).order(portfolio_value: :desc)
-     .limit(10)
   end
 
   def self.games_for(tushare_code:, num_points:, ktype:, start_date:)
