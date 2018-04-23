@@ -1,7 +1,5 @@
 class AbilityQuery
-  def self.rank_for(game_id:)
-    game = Game.find(game_id)
-
+  def self.rank_for(game:)
     # find the rank of this game_id
     Game.where(tushare_code: game.tushare_code,
                num_points:   game.num_points,

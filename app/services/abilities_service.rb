@@ -1,7 +1,9 @@
 class AbilitiesService
   def self.get(game_id:)
+    game = Game.find(game_id)
     {
-      rank:  AbilityQuery.rank_for(game_id: game_id),
+      rank:  AbilityQuery.rank_for(game: game),
+      portfolio_value: game.portfolio_value - 1,
       radar: radar(game_id)
     }
   end
