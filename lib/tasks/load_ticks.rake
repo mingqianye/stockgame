@@ -9,10 +9,10 @@ namespace :load_ticks do
         share_name:   row.fetch(1),
         date:         Date.parse(row.fetch(2)),
         ktype:        'D',
-        open:         row.fetch(3),
-        close:        row.fetch(4),
-        high:         row.fetch(5),
-        low:          row.fetch(6),
+        open:         row.fetch(3).round(2),
+        close:        row.fetch(4).round(2),
+        high:         row.fetch(5).round(2),
+        low:          row.fetch(6).round(2),
         volume:       row.fetch(7)
       )
       if ticks.count == 10000
