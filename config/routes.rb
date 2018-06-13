@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'soccer_player_votings/votes'
+
   get 'abilities/show'
 
   get 'players/upsert'
